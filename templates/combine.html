@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Multimodal Emotion Recognition</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <h1>Multimodal Emotion Recognition</h1>
+
+    <p>
+        Upload face, speech and enter text to detect the final emotion.
+    </p>
+
+    <form action="/predict_combined"
+          method="POST"
+          enctype="multipart/form-data">
+
+        <!-- FACE -->
+
+        <h3>Face Image</h3>
+
+        <input type="file"
+               name="image"
+               accept="image/*"
+               required>
+
+        <br><br>
+
+
+        <!-- SPEECH -->
+
+        <h3>Speech Audio</h3>
+
+        <input type="file"
+               name="audio"
+               accept=".wav,audio/wav"
+               required>
+
+        <br><br>
+
+
+        <!-- TEXT -->
+
+        <h3>Text</h3>
+
+        <textarea name="text"
+                  rows="4"
+                  cols="40"
+                  placeholder="Enter your message..."
+                  required></textarea>
+
+        <br><br>
+
+
+        <input type="submit"
+               value="Predict Combined Emotion">
+
+    </form>
+
+</body>
+
+</html>

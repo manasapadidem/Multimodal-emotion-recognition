@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Multimodal Emotion Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef3ff;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #0d47a1;
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .section {
+            margin-top: 25px;
+            padding: 18px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .section h3 {
+            color: #0d47a1;
+            margin-bottom: 12px;
+        }
+
+        input[type="file"] {
+            width: 90%;
+        }
+
+        textarea {
+            width: 90%;
+            height: 80px;
+            padding: 10px;
+            font-size: 15px;
+            resize: none;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #0d47a1;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1565c0;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0d47a1;
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>Multimodal Emotion Recognition</h1>
+
+        <p>
+            Provide Face, Speech and Text to predict
+            the combined emotion.
+        </p>
+
+
+        <form action="/predict_multimodal"
+              method="POST"
+              enctype="multipart/form-data">
+
+
+            <!-- FACE -->
+
+            <div class="section">
+
+                <h3>Face Emotion</h3>
+
+                <input type="file"
+                       name="image"
+                       accept="image/*"
+                       required>
+
+            </div>
+
+
+            <!-- SPEECH -->
+
+            <div class="section">
+
+                <h3>Speech Emotion</h3>
+
+                <input type="file"
+                       name="audio"
+                       accept=".wav,audio/wav"
+                       required>
+
+            </div>
+
+
+            <!-- TEXT -->
+
+            <div class="section">
+
+                <h3>Text Emotion</h3>
+
+                <textarea
+                    name="text"
+                    placeholder="Enter your message here..."
+                    required></textarea>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button type="submit">
+
+                Predict Combined Emotion
+
+            </button>
+
+        </form>
+
+
+        <br>
+
+        <a class="back" href="/">
+            🏠 Back to Home
+        </a>
+
+    </div>
+
+</body>
+
+</html>

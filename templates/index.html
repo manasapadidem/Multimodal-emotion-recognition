@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Multimodal Emotion Recognition</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>Emotion Recognition</h2>
+
+        <div>
+
+            <a href="/">Home</a>
+
+            <a href="/face">Face</a>
+
+            <a href="/speech">Speech</a>
+
+            <a href="/text">Text</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <h1>Multimodal Emotion Recognition</h1>
+
+        <h3>Understand Human Emotions Using AI</h3>
+
+        <p>
+            Our system detects emotions from
+            <br>
+            Face, Speech and Text using Deep Learning.
+        </p>
+
+    </section>
+
+
+    <!-- Prediction Cards -->
+
+    <section class="cards">
+
+        <!-- Face -->
+
+        <div class="card">
+
+            <h2>Face Emotion</h2>
+
+            <p>
+                Upload a facial image and
+                let the CNN model predict
+                your emotion.
+            </p>
+
+            <a href="/face"
+               class="button">
+                Predict Face Emotion
+            </a>
+
+        </div>
+
+
+        <!-- Speech -->
+
+        <div class="card">
+
+            <h2>Speech Emotion</h2>
+
+            <p>
+                Upload a WAV audio file and
+                let the LSTM model analyze
+                your speech emotion.
+            </p>
+
+            <a href="/speech"
+               class="button">
+                Predict Speech Emotion
+            </a>
+
+        </div>
+
+
+        <!-- Text -->
+
+        <div class="card">
+
+            <h2>Text Emotion</h2>
+
+            <p>
+                Enter a sentence and
+                let the LSTM model identify
+                the emotion.
+            </p>
+
+            <a href="/text"
+               class="button">
+                Predict Text Emotion
+            </a>
+
+        </div>
+
+        <!-- Combined Prediction -->
+
+        <div class="card combined-card">
+            
+            <h2>Combined Prediction</h2>
+            
+            <p>
+                
+                Use Face, Speech and Text together to predict
+                the final emotion using multimodal AI.
+            </p>
+            
+            <a href="/multimodal" class="button">
+                Predict Combined Emotion
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            Multimodal Emotion Recognition
+        </p>
+
+        <p>
+            Face • Speech • Text
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

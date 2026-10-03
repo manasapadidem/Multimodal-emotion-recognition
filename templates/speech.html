@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Speech Emotion Recognition</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>Emotion Recognition</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/face">Face</a>
+            <a href="/speech">Speech</a>
+            <a href="/text">Text</a>
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <h1>Speech Emotion Recognition</h1>
+
+        <h3>Detect Emotion from Speech</h3>
+
+        <p>
+            Upload a WAV audio file and our LSTM model
+            will predict the emotion.
+        </p>
+
+
+        <div class="upload-box">
+
+            <form action="/predict_speech"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+                <input type="file"
+                       name="audio"
+                       accept=".wav,audio/wav"
+                       required>
+
+                <br><br>
+
+                <input type="submit"
+                       value="Predict Speech Emotion"
+                       class="button">
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>Multimodal Emotion Recognition</p>
+
+        <p>Face • Speech • Text</p>
+
+    </footer>
+
+</body>
+
+</html>
